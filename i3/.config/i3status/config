@@ -1,0 +1,83 @@
+general {
+        output_format = "i3bar"
+        markup = pango
+        interval = 1
+        colors = false
+        color_good = '#2f343f'
+	color_degraded = '#ff9900'
+	color_bad = '#b50c00'
+}
+
+order += "disk /"
+order += "load"
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "ethernet _first_"
+order += "wireless _first_"
+order += "volume master"
+order += "battery 1"
+order += "tztime local"
+
+disk "/" {
+        format = "<span background='#fec7cd'>  %free </span>"
+	separator = false
+}
+
+load {
+        format = "<span background='#59c1ce'> 勒 %5min Load </span>"
+	separator = false
+}
+
+cpu_usage {
+	format = "<span background='#59c1ce'>  %usage </span>"
+	max_threshold = 75
+	separator = false
+}
+
+cpu_temperature 0 {
+        format = "<span background='#59c1ce'>  %degrees °C </span>"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+	separator = false
+}
+
+ethernet _first_ {
+        format_up = "<span background='#bbbbbb'>  %ip </span>"
+        format_down = "<span background='#f59335'>  </span>"
+	separator = false
+}
+
+wireless _first_ {
+        format_up = "<span background='#bbbbbb'> 直 %quality %essid </span>"
+        format_down = "<span background='#f59335'> 睊 </span>"
+	separator = false
+}
+
+volume master {
+        format = "<span background='#ebcb8b'>  %volume </span>"
+        format_muted = "<span background='#f59335'>  </span>"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+	separator = false
+}
+
+battery 1 {
+	last_full_capacity = true
+	integer_battery_capacity = true
+        format = "<span background=%status %percentage %remaining </span>"
+        format_down = ""
+        status_chr = "'#a3be8c'> "
+        status_bat = "'#ebcb8b'> "
+        status_unk = "'#f59335'> "
+        status_full = "'#a1d569'> "
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+	separator = false
+}
+
+tztime local {
+	format = "<span background='#dddddd'> %time </span>"
+	format_time = "%a %-d %b %H:%M"
+	separator = false
+}
+
