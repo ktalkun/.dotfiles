@@ -169,25 +169,28 @@ bar {
 	#font pango: Font Awesome 5 Pro Solid 11, DejaVu Sans Mono 11
 	#font pango: DejaVuSansMono Nerd Font 10
 	font pango: DejaVu Sans Mono for Powerline 10
+
 	colors {
 		background #2f343f
 		statusline #2f343f
 		separator #4b5262
 		
-		# colour of border, background, and text
-		focused_workspace       #2f343f #bf616a #d8dee8
-		active_workspace        #2f343f #2f343f #d8dee8
-		inactive_workspace      #2f343f #2f343f #d8dee8
-		urgent_workspacei       #2f343f #ebcb8b #2f343f
+		# color of 		border		background	text
+		focused_workspace       #2f343f		#bf616a		#d8dee8
+		active_workspace        #2f343f		#2f343f 	#d8dee8
+		inactive_workspace      #2f343f		#2f343f 	#d8dee8
+		urgent_workspacei       #2f343f		#ebcb8b 	#2f343f
 	}
 
 	#separator_symbol " "
 }
-exec --no-startup-id hsetroot -cover ~/wallpaper.jpg
-# color of border, background, text, indicator, and child_border
-client.focused              #bf616a #2f343f #d8dee8 #bf616a #bf616a
-client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background           #2f343f
+
+# color of 			border		background	text		indicator	child_border
+client.focused              	#bf616a 	#2f343f 	#d8dee8 	#bf616a 	#bf616a
+client.focused_inactive     	#2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
+client.unfocused            	#2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
+client.urgent               	#2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
+client.placeholder          	#2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
+client.background           	#2f343f
+
+exec --no-startup-id hsetroot -cover ~/Downloads/Wallpapers/wallpaper.jpg
