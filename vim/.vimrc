@@ -41,7 +41,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 	nnoremap <leader>ld :MarkdownPreview<CR>
 	nnoremap <leader>lt :TableFormat<CR>
-	nnoremap <leader>lc :Toc<CR>
+	nnoremap <leader>ltoc :Toc<CR>
 	Plug 'mzlogin/vim-markdown-toc'
 	nnoremap <leader>lo :GenTocGFM<CR>
 
