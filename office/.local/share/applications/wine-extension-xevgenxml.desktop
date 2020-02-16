@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=winebrowser
+MimeType=application/x-wine-extension-xevgenxml;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen XEV.GenericApp %f
+NoDisplay=true
+StartupNotify=true

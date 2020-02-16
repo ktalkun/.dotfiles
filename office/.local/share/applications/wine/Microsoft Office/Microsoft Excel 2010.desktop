@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Microsoft Excel 2010
+Exec=env WINEPREFIX="/home/kirill/.msoffice" /home/kirill/.clibs/wine32-3.0.2/bin/wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/kirill/.msoffice/dosdevices/c:/users/kirill/Start\\ Menu/Programs/Microsoft\\ Office/Microsoft\\ Excel\\ 2010.lnk
+Type=Application
+StartupNotify=true
+Comment=Perform calculations, analyze information, and visualize data in spreadsheets by using Microsoft Excel.
+Icon=284C_xlicons.0
+StartupWMClass=excel.exe

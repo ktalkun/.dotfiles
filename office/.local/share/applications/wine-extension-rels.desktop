@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=winebrowser
+MimeType=application/x-wine-extension-rels;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen xmlfile %f
+NoDisplay=true
+StartupNotify=true

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft PowerPoint
+MimeType=application/vnd.openxmlformats-officedocument.presentationml.slideshow;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen PowerPoint.SlideShow.12 %f
+NoDisplay=true
+StartupNotify=true

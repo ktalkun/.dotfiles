@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft PowerPoint
+MimeType=application/x-wine-extension-pptxml;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen powerpointxmlfile %f
+NoDisplay=true
+StartupNotify=true

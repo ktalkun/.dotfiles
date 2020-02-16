@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft Word
+MimeType=application/msword;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen Word.Backup.8 %f
+NoDisplay=true
+StartupNotify=true

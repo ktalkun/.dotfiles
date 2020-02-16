@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft Excel
+MimeType=application/vnd.oasis.opendocument.spreadsheet;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen Excel.OpenDocumentSpreadsheet.12 %f
+NoDisplay=true
+StartupNotify=true

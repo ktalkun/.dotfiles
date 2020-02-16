@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=rundll32
+MimeType=application/x-ms-application;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen Application.Manifest %f
+NoDisplay=true
+StartupNotify=true

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft Excel
+MimeType=text/spreadsheet;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen Excel.SLK %f
+NoDisplay=true
+StartupNotify=true

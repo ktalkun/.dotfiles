@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft Excel
+MimeType=application/vnd.ms-excel.addin.macroEnabled.12;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen Excel.AddInMacroEnabled %f
+NoDisplay=true
+StartupNotify=true

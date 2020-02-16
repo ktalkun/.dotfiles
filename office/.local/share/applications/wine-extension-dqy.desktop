@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft Excel
+MimeType=application/x-wine-extension-dqy;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen dqyfile %f
+NoDisplay=true
+StartupNotify=true

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft PowerPoint
+MimeType=application/vnd.openxmlformats-officedocument.presentationml.template;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen PowerPoint.Template.12 %f
+NoDisplay=true
+StartupNotify=true

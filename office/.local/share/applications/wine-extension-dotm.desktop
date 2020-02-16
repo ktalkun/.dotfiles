@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft Word
+MimeType=application/vnd.ms-word.template.macroEnabled.12;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen Word.TemplateMacroEnabled.12 %f
+NoDisplay=true
+StartupNotify=true

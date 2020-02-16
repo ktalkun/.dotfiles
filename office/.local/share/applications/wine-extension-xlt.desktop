@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft Excel
+MimeType=application/vnd.ms-excel;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen Excel.Template.8 %f
+NoDisplay=true
+StartupNotify=true

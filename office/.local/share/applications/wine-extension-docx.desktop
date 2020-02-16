@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft Word
+MimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen Word.Document.12 %f
+NoDisplay=true
+StartupNotify=true

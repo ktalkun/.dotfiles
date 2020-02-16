@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=notepad
+MimeType=application/x-wine-extension-exc;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen txtfile %f
+NoDisplay=true
+StartupNotify=true

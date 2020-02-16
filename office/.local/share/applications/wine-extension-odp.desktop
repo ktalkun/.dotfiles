@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft PowerPoint
+MimeType=application/vnd.oasis.opendocument.presentation;
+Exec=env WINEPREFIX="/home/kirill/.msoffice" wine start /ProgIDOpen PowerPoint.OpenDocumentPresentation.12 %f
+NoDisplay=true
+StartupNotify=true
