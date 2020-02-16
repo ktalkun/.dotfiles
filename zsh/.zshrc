@@ -238,4 +238,5 @@ bindkey '^j' forward-word
 #	/_/   \_\_____|___/_/   \_\____/|_____|____/ 
 #	                                             
 
-alias gdw="cd ~/Загрузки"
+alias gdw="cd ~/Downloads"
+alias gho="cd ~"
