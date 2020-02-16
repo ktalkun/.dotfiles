@@ -513,7 +513,7 @@ rm -rf ranger
 	# Установка пакета atool для препросмотра архивов
 	sudo apt install atool
 	# Установка bat для предпросмотра файлов
-	sudo apt install /home/kirill/TOLKUN/Resources/Bat/bat-musl_0.12.1_amd64.deb
+	sudo apt install ~/.dotfiles/Resources/Bat/bat-musl_0.12.1_amd64.deb
 	# Восстановление конфигураций bat
 	cd ~/.dotfiles
 	stow -vRt ~ bat
