@@ -37,7 +37,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+[ split h
+#bindsym $mod+[ split h
 
 # split in vertical orientation
 #bindsym $mod+] split v
@@ -83,6 +83,14 @@ bindsym XF86AudioMute exec amixer set Master toggle
 bindsym Mod1+XF86AudioRaiseVolume exec amixer set Capture -q 5%+ cap
 bindsym Mod1+XF86AudioLowerVolume exec amixer set Capture -q 5%- cap
 bindsym Mod1+XF86AudioMute exec amixer set Capture toggle
+
+# PrintScreen
+bindsym Mod1+Sys_Req exec "scrot -a $(slop -f '%x,%y,%w,%h')"
+#bindsym Mod1+Sys_Req exec notify-send "x,y,w,h"
+#bindsym Print exec notify-send "x,y,w,h"
+bindsym Print exec "notify-send 'Hello, World'"
+bindsym $mod+Print exec scrot
+
  
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -127,6 +135,24 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Telegram
+bindsym $mod+Ctrl+t exec telegram-desktop; [class="TelegramDesktop"] scratchpad show, move position center
+for_window [class="TelegramDesktop" title="Telegram.*$"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
+bindsym $mod+Ctrl+Shift+t exec pkill telegram-deskto
+
+# Skype
+bindsym $mod+Ctrl+s exec skypeforlinux; [class="Skype"] scratchpad show, move position center
+for_window [class="Skype"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
+bindsym $mod+Ctrl+Shift+s exec pkill skypeforlinux
+
+# Discord
+bindsym $mod+Ctrl+d [class="discord"] scratchpad show, move position center
+for_window [class="discord"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
+bindsym $mod+Ctrl+Shift+d exec pkill Discord
+
+# Intellij Idea
+for_window [class="jetbrains-idea" title="win0"] floating enable border none;
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
