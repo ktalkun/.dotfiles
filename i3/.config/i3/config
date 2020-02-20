@@ -1,4 +1,3 @@
-for_window [class="Mathpix Snipping Tool" instance="mathpix-snipping-tool"] floating enable
 #new_window 0pixel # отключает синий заголовок окна
 default_border pixel 1
 for_window [class="^.*"] border pixel 4
@@ -36,11 +35,11 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# split in horizontal orientation
-#bindsym $mod+[ split h
+# split in horizontal orientation (character "[")
+bindcode $mod+34 split h
 
-# split in vertical orientation
-#bindsym $mod+] split v
+# split in vertical orientation (character "]")
+bindcode $mod+35 split v
 
 # enter fullscreen mode for the focused container
 #bindsym $mod+f fullscreen toggle
@@ -136,6 +135,10 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# Ranger
+#bindsym $mod+Ctrl+r exec --no-startup-id `~/.csripts/ranger/run`; [class="URxvt" title="ranger"] scratchpad show, move position center
+#for_window [class="URxvt" title="ranger"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
+
 # Telegram
 bindsym $mod+Ctrl+t exec telegram-desktop; [class="TelegramDesktop"] scratchpad show, move position center
 for_window [class="TelegramDesktop" title="Telegram.*$"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
@@ -153,6 +156,29 @@ bindsym $mod+Ctrl+Shift+d exec pkill Discord
 
 # Intellij Idea
 for_window [class="jetbrains-idea" title="win0"] floating enable border none;
+
+# Mathpix Snipping Tool
+for_window [class="Mathpix Snipping Tool" instance="mathpix-snipping-tool"] floating enable
+
+# (character "]")
+bindcode $mod+Ctrl+35 exec sudo systemctl start docker.service docker.socket
+bindcode $mod+Ctrl+Shift+35 exec sudo systemctl stop docker.service docker.socket
+
+# (character "'")
+bindcode $mod+Ctrl+48 exec sudo systemctl start snapd.service snapd.socket
+bindcode $mod+Ctrl+Shift+48 exec sudo systemctl stop snapd.service snapd.socket
+
+# (character "/")
+bindcode $mod+Ctrl+61 exec sudo systemctl start NetworkManager.service
+bindcode $mod+Ctrl+Shift+61 exec sudo systemctl stop NetworkManager.service
+
+# (character "[")
+bindcode $mod+Ctrl+34 exec sudo systemctl start wpa_supplicant.service
+bindcode $mod+Ctrl+Shift+34 exec sudo systemctl stop wpa_supplicant.service
+
+# (character ";")
+bindcode $mod+Ctrl+47 exec sudo systemctl start winbind.service
+bindcode $mod+Ctrl+Shift+47 exec sudo systemctl stop winbind.service
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
