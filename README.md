@@ -349,49 +349,6 @@ sudo apt install docker-compose
 # символических ссылок на конфигурационные файлы
 sudo apt install stow
 
-#	 __     __  ___   __  __ 
-#	 \ \   / / |_ _| |  \/  |
-#	  \ \ / /   | |  | |\/| |
-#	   \ V /    | |  | |  | |
-#	    \_/    |___| |_|  |_|
-#	                         
-
-# Установка текстового редактора vim
-sudo apt install vim-gtk3
-	# Установка менеджера пакетов python для установки powerline
-	sudo apt install python-pip
-	# Установка пакета powerline
-	pip install --user git+git://github.com/powerline/powerline
-		# Клонирование репозитория со шрифтами
-		git clone https://github.com/powerline/fonts.git
-		# Переход в склонированную директорию
-		cd fonts
-		# Установка шрифтов для powerline
-		./install.sh
-		# Обновление индекса шрифтов
-		sudo fc-cache -f -v
-		# Удаление оставшихся файлов
-		cd ..
-		rm -rf fonts
-
-	# Установка утилиты для поиска ag для плагина vim "fzf-vim"
-	sudo apt install silversearcher-ag
-	# Установка утилиты для поиска ripgrep для плагина vim "fzf-vim"
-	sudo apt install ripgrep
-	# Установка утилиты для поиска fzf для плагина vim "fzf-vim"
-	sudo apt install fzf
-
-	# Установка latexmk компиляции pdf из tex
-	sudo apt install latexmk
-	# Установка zathura для открытия pdf-файлов
-	sudo apt install zathura
-	# Установка xdotool для поиска по pdf-файлу из vim
-	sudo apt install xdotool
-
-	# Восстановление конфигураций vim
-	cd ~/.dotfiles
-	stow -vRt ~ vim
-
 #	 __  __   ___    ____     ____ 
 #	 \ \/ /  / _ \  |  _ \   / ___|
 #	  \  /  | | | | | |_) | | |  _ 
@@ -457,6 +414,9 @@ sudo apt install i3
 	cd ~/.dotfiles
 	# Восстановление конфигураций i3
 	stow -vRt ~ i3
+	# Создание директории со шрифтами, чтобы при восстановлении конфигураций i3status,
+	# символическая ссылка создавалась внутри директории fonts
+	mkdir -p ~/.local/share/fonts
 	# Восстановление конфигураций i3status
 	stow -vRt ~ i3status
 
@@ -471,6 +431,48 @@ sudo apt install rxvt-unicode-256color
 # Восстановление конфигураций urxvt
 cd ~/.dotfiles
 stow -vRt ~ urxvt
+
+#	 __     __  ___   __  __ 
+#	 \ \   / / |_ _| |  \/  |
+#	  \ \ / /   | |  | |\/| |
+#	   \ V /    | |  | |  | |
+#	    \_/    |___| |_|  |_|
+#	                         
+# Установка текстового редактора vim
+sudo apt install vim-gtk3
+	# Установка менеджера пакетов python для установки powerline
+	sudo apt install python-pip
+	# Установка пакета powerline
+	pip install --user git+git://github.com/powerline/powerline
+		# Клонирование репозитория со шрифтами
+		git clone https://github.com/powerline/fonts.git
+		# Переход в склонированную директорию
+		cd fonts
+		# Установка шрифтов для powerline
+		./install.sh
+		# Обновление индекса шрифтов
+		sudo fc-cache -f -v
+		# Удаление оставшихся файлов
+		cd ..
+		rm -rf fonts
+
+	# Установка утилиты для поиска ag для плагина vim "fzf-vim"
+	sudo apt install silversearcher-ag
+	# Установка утилиты для поиска ripgrep для плагина vim "fzf-vim"
+	sudo apt install ripgrep
+	# Установка утилиты для поиска fzf для плагина vim "fzf-vim"
+	sudo apt install fzf
+
+	# Установка latexmk компиляции pdf из tex
+	sudo apt install latexmk
+	# Установка zathura для открытия pdf-файлов
+	sudo apt install zathura
+	# Установка xdotool для поиска по pdf-файлу из vim
+	sudo apt install xdotool
+
+	# Восстановление конфигураций vim
+	cd ~/.dotfiles
+	stow -vRt ~ vim
 
 #	  _____  ____    _   _ 
 #	 |__  / / ___|  | | | |
@@ -536,6 +538,8 @@ rm -rf ranger
 	rm -rf epub-thumbnailer/
 	# Установка mediainfo для предпросмотра информации о медиа-файлах
 	sudo apt install mediainfo
+	# Установка утилиты для использования корзины (удаление файлов) из терминала
+	sudo apt install trash-cli
 # Создание символической ссылки в /usr/local/bin на dragon
 cd ~/.cscripts
 sudo stow -vRt / dragon
@@ -547,6 +551,16 @@ sudo stow -vRt / opendoc
 # Восстановление конфигураций ranger
 cd ~/.dotfiles
 stow -vRt ~ ranger
+
+#	 _____ __  __ _   ___  __
+#	|_   _|  \/  | | | \ \/ /
+#	  | | | |\/| | | | |\  / 
+#	  | | | |  | | |_| |/  \ 
+#	  |_| |_|  |_|\___//_/\_\
+#	                         
+sudo apt install tmux
+cd .dotfiles
+stow -vRt ~ tmux
 ```
 
 #### 4. Installing applications and adding utils:
@@ -559,7 +573,7 @@ stow -vRt ~ ranger
 #	  \___/    |_|   |___| |_____| |____/ 
 #	                                      
 # Установка утилиты для работы с JSON в bash
-sudo apt insatll jq
+sudo apt install jq
 
 # Установка GUI для pulseaudio
 sudo apt install pavucontrol
@@ -570,13 +584,10 @@ cd ~/.cscripts
 sudo stow -vRt / htop
 #Восстановление конфигураций htop
 cd ~/.dotfiles
-stow ~ htop
+stow -vRt ~ htop
 
 # Установка монитора сети
 sudo apt install nload
-
-# Установка утилиты для использования корзины (удаление файлов) и терминала
-sudo apt install trash-cli
 
 # Установка утилиты для вызова функций приложение (изменение значений
 # переменных) при помощи dbus
@@ -608,7 +619,7 @@ sudo apt install figlet
 #	 |_|  |_| /_/   \_\ |_| \_| /_/   \_\  \____| |_____| |_| \_\ |____/ 
 #	                                                                     
 # Установка менеджера загрузок aria2
-sudo apt isntall aria2
+sudo apt install aria2
 
 # Установка youtube-dl для скачивания видео и аудио с различных сайтов
 sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O ~/.cscripts/youtube-dl/usr/local/bin/youtube-dl
@@ -669,8 +680,11 @@ sudo apt install zathura
 # Добавляем к поддержку архитектуры x86, чтобы можно было установить wine32
 # при помощи пакетного менеджера
 sudo dpkg --add-architecture i386
+sudo apt update
 # Установка wine версии x86
 sudo apt install wine32
+# Установка winetricks для скачивания зависимостей
+sudo apt install winetricks
 # Чтобы установка MS Office не обрывалась на середине
 sudo apt install winbind
 # Создание директории (префикса), куда будет установлен Office
@@ -3023,7 +3037,7 @@ rm -rf ~/.texlive2019
 cd /your/download/directory
 tar -xf install-tl-unx.tar.gz
 cd /directory/exctracted
-./install-tl.sh
+sudo ./install-tl
 ```
 
 После этого произойдёт скачивание всех необходимых пакетов. В конце скачивания будет написано, как требуется изменить переменные среды. Переменные среды можно добавить в файл конфигурации шелла, будь то `~/.bashrc` для _bash-shell_ или `~/.zshrc` для _zsh-shell_. Однако перед выбором файла для изменения переменных среды и перед вставкой в него строк, написанных ниже, рекомендуется прочесть раздел про [переменные среды](#environment-variables). Мы же будем добавлять следующие строки в файл `~/.zprofile`, чтобы значения переменных среды не дублировались при запуске шелла из шелла, т.е. данные значения будут добавляться в переменные среды единожды, при авторизации в системе, при этом, чтобы сэмулировать данное поведение, можно выполнить команду `zsh --login`.
