@@ -558,6 +558,9 @@ stow -vRt ~ ranger
 #	 | |_| |   | |    | |  | |___   ___) |
 #	  \___/    |_|   |___| |_____| |____/ 
 #	                                      
+# Установка утилиты для работы с JSON в bash
+sudo apt insatll jq
+
 # Установка GUI для pulseaudio
 sudo apt install pavucontrol
 
