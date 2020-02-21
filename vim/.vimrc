@@ -60,6 +60,7 @@ call plug#begin('~/.vim/plugged')
 	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 	let g:UltiSnipsSnippetsDir = "~/.vim/plugged/ultisnips"
 	let g:UltiSnipsSnippetDirectories=["~/.vim/plugged/ultisnips"]
+	set rtp+=~/TOLKUN/university/current-course/ultisnips
 	 
 	Plug 'scrooloose/nerdtree'
 	map <C-n> :NERDTreeToggle<CR>
