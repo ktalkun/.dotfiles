@@ -287,7 +287,7 @@ deb-src http://deb.debian.org/debian/ buster main contrib non-free
 
 ```sh
 # Установки всех основных драйверов, необходима всем
-sudo apt install firmware linux
+sudo apt install firmware-linux
 
 # Установка драйверов для устройств atheros (ставим по необходимости)
 sudo apt install firmware-atheros
@@ -297,13 +297,16 @@ sudo apt install firmware-realtek
 
 # Установка инструментов для энергосбережения (для ноутбуков).
 # Работает автоматически, можно редактировать конфиги
-sudo apt install laptop-mode-tools
+# sudo apt install laptop-mode-tools
+# Ещё одна утилита для энергосбережения (меньше конфигов),
+# tlp несовместим с laptop-mode-tools
+# sudo apt install tlp tlp-rdw
 
 # Установка инструментов для работы с двумя видеокартами (встроенной и дискретной).
 # Для правильной работы, необходимо отключить "Secure Mode" в bios.
 # Для запуска приложений `optirun app_name` или `primusrun app_name`
 # (primus более оптимизирован)
-sudo apt-get install bumblebee-nvidia primus libgl1-nvidia-glx
+sudo apt-get install bumblebee-nvidia primus
 
 # Утилита для управления интернет подключениями (nmcli, nmtui)
 sudo apt install network-manager
@@ -320,6 +323,10 @@ sudo apt install xclip
 sudo apt install fonts-freefont-ttf
 sudo apt install unzip
 sudo apt install unrar
+# Для форматирования в FAT
+sudo apt install dosfstools
+# Команды для работы с процессами (killall, pstree и др.)
+sudo apt install psmisc
 # Для работы mount с файловой системой ntfs
 sudo apt install ntfs-3d
 
@@ -366,7 +373,7 @@ sudo apt install xorg
 #	  | |   ___) |   \ V  V /   | |  | |
 #	 |___| |____/     \_/\_/    |_|  |_|
 #	                                    
-# Установка менеджера оконо i3wm
+# Установка менеджера окон i3wm
 sudo apt install i3
 	# Установка xbacklight для регулировки яркости экрана (хоткеи в конфиге)
 	sudo apt install xbacklight
@@ -670,6 +677,9 @@ sudo apt install mpv
 
 # Установка pdf читалки
 sudo apt install zathura
+
+# Установка графического редактора
+sudo snap install krita
 
 #	  __  __   ____       ___    _____   _____   ___    ____   _____ 
 #	 |  \/  | / ___|     / _ \  |  ___| |  ___| |_ _|  / ___| | ____|
