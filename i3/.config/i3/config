@@ -84,11 +84,20 @@ bindsym Mod1+XF86AudioLowerVolume exec amixer set Capture -q 5%- cap
 bindsym Mod1+XF86AudioMute exec amixer set Capture toggle
 
 # PrintScreen
-bindsym Mod1+Sys_Req exec "scrot -a $(slop -f '%x,%y,%w,%h')"
-#bindsym Mod1+Sys_Req exec notify-send "x,y,w,h"
-#bindsym Print exec notify-send "x,y,w,h"
-bindsym Print exec "notify-send 'Hello, World'"
-bindsym $mod+Print exec scrot
+# Fullscreen screenshot
+bindsym Print exec "scrot /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-full-$wx$h.png'"
+# Fullscreen screenshot in clipboard
+bindsym Ctrl+Print exec "scrot /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-full-$wx$h.png' -e 'pngquant $f --ext=-compressed.png && xclip -i -sel c -t image/png `echo $f | sed s/.png/-compressed.png/`'"
+# Screenshot of area
+bindsym Mod1+Sys_Req exec "scrot -a $(slop -f '%x,%y,%w,%h') /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-area-$wx$h.png'"
+# Screenshot of area in clipboard
+bindsym Ctrl+Mod1+Sys_Req exec "scrot -a $(slop -f '%x,%y,%w,%h') /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-area-$wx$h.png' -e 'pngquant $f --ext=-compressed.png && xclip -i -sel c -t image/png `echo $f | sed s/.png/-compressed.png/`'"
+
+# Power managment
+bindsym $mod+Mod1+s exec systemctl suspend
+bindsym $mod+Mod1+r exec systemctl reboot
+bindsym $mod+Mod1+h exec systemctl hibernate
+bindsym $mod+Mod1+p exec systemctl poweroff
 
  
 # Define names for default workspaces for which we configure key bindings later on.
