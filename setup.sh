@@ -18,6 +18,7 @@ entries=(
     ["tmux"]="${HOME}"
     ["urxvt"]="${HOME}"
     ["vim"]="${HOME}"
+    ["wifi"]="${HOME}"
     ["xorg"]="/"
     ["zsh"]="${HOME}"
 )

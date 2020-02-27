@@ -8,6 +8,7 @@
 			* [2. Installing drivers:](#2-installing-drivers)
 			* [3. Installing main tools:](#3-installing-main-tools)
 			* [4. Installing applications and adding utils:](#4-installing-applications-and-adding-utils)
+	* [Tar](#tar)
 	* [Xbacklight](#xbacklight)
 	* [Amixer](#amixer)
 	* [Playerctl](#playerctl)
@@ -95,6 +96,7 @@
 	* [Telegram](#telegram)
 	* [Discord](#discord)
 	* [Mathpix snipping tool](#mathpix-snipping-tool)
+	* [Intellij IDEA](#intellij-idea)
 	* [Postman](#postman)
 	* [Krita](#krita)
 	* [Vim](#vim)
@@ -772,6 +774,16 @@ sudo systemctl stop ModemManager.service
 - winbind 
 - wine-mono (для поддержки .NET приложений) 
 - wine-gecko (для поддержки html)
+
+## Tar
+_Tar_ - утилита для архивирования.
+
+```sh
+# Разархивирование 
+# --same-owner - распаковка с сохранением владельцев файлов
+# -x - 
+sudo tar --same-owner -xvpf /media/backup/backup.tar.gz -C /home
+```
 
 ## Xbacklight
 Для регулирования уровня подсветки из терминала будем использовать утилиту _xbacklight_, установим её:
@@ -2103,7 +2115,7 @@ xrdb -merge ~/.Xresources
 
 #### Initializing variables
 ##### Add default dirs with `.desktop` files
-Добавим две директории с _desktop_-файлами в переменную среды _\$XDG_DATA_DIRS_, которые автоматически добавляются при использовании _Gnome DE_, для этого добавим следующую строку в файле `~/.zprofile`:
+Добавим две директории с _desktop_-файлами в переменную среды _\$XDG_DATA_DIRS_, которые автоматически добавляются при использовании _Gnome DE_, для этого добавим следующую строку в файле `~/.zprofile` (должен быть установлен [zsh](#zsh)):
 
 ```
 export XDG_DATA_DIRS=/usr/local/share:/usr/share:$XDG_DATA_DIRS
@@ -2786,6 +2798,29 @@ sudo snap install mathpix-snipping-tool
 
 ```sh
 snap run mathpix-snipping-tool
+```
+
+## Intellij IDEA
+Установим _Intellij IDEA_ при помощи пакетной системы _Snap_. Для этого [snap](#snap) должен быть уже установлен.
+
+Если _Snap_ уже установлен, чтобы установить _Intellij IDEA_, достаточно выполнить следующую команду:
+
+```sh
+# Ultimate версия
+sudo snap install intellij-idea-ultimate --classic
+
+# Community версия
+sudo snap install intellij-idea-community
+```
+
+Теперь, чтобы запустить _Intellij IDEA_ достаточно выполнить следующую команду:
+
+```sh
+# Ultimate версия
+snap run intellij-idea-ultimate
+
+# Community версия
+snap run intellij-idea-ultimate
 ```
 
 ## Postman
