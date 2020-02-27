@@ -20,6 +20,7 @@
 	* [Xsel](#xsel)
 		* [Xsel man page](#xsel-man-page)
 		* [Using xsel](#using-xsel)
+	* [Scrot](#scrot)
 	* [Fzf](#fzf)
 	* [Ag](#ag)
 	* [Ripgrip](#ripgrip)
@@ -549,6 +550,8 @@ rm -rf ranger
 	sudo apt install mediainfo
 	# Установка утилиты для использования корзины (удаление файлов) из терминала
 	sudo apt install trash-cli
+	# Установка утилиты для редактирования изображений (вращение)
+	sudo apt install imagemagick
 # Создание символической ссылки в /usr/local/bin на dragon
 cd ~/.cscripts
 sudo stow -vRt / dragon
@@ -605,6 +608,9 @@ sudo apt install qdbus
 # Установка утилиты для сканирования жёсткого диска и вывода 
 # соотношения занимаемого дискового пространства
 sudo apt install ncdu
+
+# Утилита для редактирования изображений из терминала
+sudo apt install imagemagick
 
 # Установка пакетного менеджера snap
 sudo apt install snapd
@@ -1229,6 +1235,66 @@ xsel -c > "file.txt"
 
 
 ```
+
+## Scrot
+Для создания скриншотов экрана установим пакет _scrot_ и _slop_ (для получения размеров выделенной области):
+
+```sh
+sudo apt install scrot
+sudo apt insatll slop
+```
+
+```sh
+# Скриншот текущего окна
+scrot --focused filename.png
+scrot -u filename.png
+
+# Скришнот текущего окна с рамкой
+scrot --focused --border filename.png
+scrot -ub filename.png
+
+# Скриншот выделенной области
+scrot --select filename.png
+scrot -s filename.png
+
+# Скришнот с задержкой в 5 сек
+scrot --delay 5 filename.png
+
+# Скришнот с задержкой в 5 сек и обратным отсчётом
+scrot --delay 5 --count filename.png
+scrot -d 5 -c filename.png
+
+# Скришнот с качеством 50%
+scrot --quality 50 filename.png
+scrot -q 50 filename.png
+
+# Скришнот с создание миниатюры размером 50% от размер скриншота
+scrot --thumb 50 filename.png
+scrot -t 50 filename.png
+
+# Скриншот с присоединением области дополнительно подключенного дисплея
+scrot --multidisp filename.png
+scrot -m filename.png
+
+# Открытие скриншота в gimp после его создания
+scrot filename.png -exec 'gimp filename.png'
+scrot filename.png -e'gimp filename.png'
+
+# Скриншот с именем "год-месяц-день-часы-минуты-секунды.png"
+scrot %Y-%m-%d-%T.png
+```
+
+__Спецификаторы формата:__
+* `$f` - путь скриншота;
+* `$m` - путь созданной миниатюры скриншота;
+* `$n` - имя скриншота;
+* `$s` - размер скриншота;
+* `$p` - размер пикселя скриншота;
+* `$w` - ширина скриншота;
+* `$h` - высота скриншота;
+* `$t` - формат скриншота;
+* `$$` - литерал '$'$;
+* `\n` - символ новой строки.
  
 ## Fzf
 Для использования нечёткого поиска установим пакет _fzf_:
