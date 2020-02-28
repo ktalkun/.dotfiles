@@ -324,7 +324,9 @@ sudo apt install software-properties-common
 sudo apt install xsel
 sudo apt install xclip
 sudo apt install fonts-freefont-ttf
+sudo apt install p7zip-full
 sudo apt install unzip
+sudo apt install rar
 sudo apt install unrar
 # Для форматирования в FAT
 sudo apt install dosfstools
@@ -552,6 +554,10 @@ rm -rf ranger
 	sudo apt install trash-cli
 	# Установка утилиты для редактирования изображений (вращение)
 	sudo apt install imagemagick
+	# Установка утилиты для архивирования в .7z
+	sudo apt install p7zip-full
+	# Установка утилиты для архивирования в .rar
+	sudo apt install rar
 # Создание символической ссылки в /usr/local/bin на dragon
 cd ~/.cscripts
 sudo stow -vRt / dragon
