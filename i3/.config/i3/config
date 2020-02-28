@@ -144,7 +144,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-for_window [class="jetbrains-idea"] move to workspace $ws2; exec notify-send "App notification" "Intellij IDEA is started"
+for_window [class="jetbrains-idea"] move to workspace $ws2; exec dunstify "App notification" "Intellij IDEA is started"
 
 # Ranger
 bindsym $mod+Ctrl+r exec ~/.cscripts/ranger/ranger_run; [class = "^URxvt$" instance="^ranger$"] scratchpad show, move position center
