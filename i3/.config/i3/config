@@ -144,9 +144,12 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+for_window [class="jetbrains-idea"] move to workspace $ws2; exec notify-send "App notification" "Intellij IDEA is started"
+
 # Ranger
 #bindsym $mod+Ctrl+r exec --no-startup-id `~/.csripts/ranger/run`; [class="URxvt" title="ranger"] scratchpad show, move position center
 #for_window [class="URxvt" title="ranger"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
+#bindsym $mod+n exec --no-startup-id ~/.config/i3/scripts/scratchpad_toggle ranger "rxvt -t ranger -e ranger"
 
 # Telegram
 bindsym $mod+Ctrl+t exec telegram-desktop; [class="TelegramDesktop"] scratchpad show, move position center
@@ -254,4 +257,4 @@ client.urgent               	#2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
 client.placeholder          	#2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
 client.background           	#2f343f
 
-exec --no-startup-id hsetroot -cover ~/Downloads/Wallpapers/wallpaper.jpg
+exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/Llama.jpg
