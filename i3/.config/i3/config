@@ -147,9 +147,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 for_window [class="jetbrains-idea"] move to workspace $ws2; exec notify-send "App notification" "Intellij IDEA is started"
 
 # Ranger
-#bindsym $mod+Ctrl+r exec --no-startup-id `~/.csripts/ranger/run`; [class="URxvt" title="ranger"] scratchpad show, move position center
-#for_window [class="URxvt" title="ranger"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
-#bindsym $mod+n exec --no-startup-id ~/.config/i3/scripts/scratchpad_toggle ranger "rxvt -t ranger -e ranger"
+bindsym $mod+Ctrl+r exec ~/.cscripts/ranger/ranger_run; [class = "^URxvt$" instance="^ranger$"] scratchpad show, move position center
+for_window [class = "^URxvt$" instance="^ranger$"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
+bindsym $mod+Ctrl+Shift+r exec kill -9 `xprop -name "ranger" | grep "_NET_WM_PID" | cut -d' ' -f3`
 
 # Telegram
 bindsym $mod+Ctrl+t exec telegram-desktop; [class="TelegramDesktop"] scratchpad show, move position center
