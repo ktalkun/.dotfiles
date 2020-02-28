@@ -16,7 +16,7 @@ URxvt.fading:			0
 URxvt.transparent:		true
 URxvt.shading:			30
 URxvt.blurRadius:		0
-!URxvt.background:		#d3d3d3
+!URxvt.background:		#1c1c1c
 URxvt.foreground:		#e6e6e6
  
 ! URxvt.urgentOnBell:		true
