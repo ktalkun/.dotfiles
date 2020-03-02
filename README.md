@@ -356,6 +356,7 @@ sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/local/oracle-j
 sudo update-alternatives --install "/usr/bin/jar" "jar" "/usr/local/oracle-java-11/jdk-11.0.6/bin/jar" 2
 
 sudo apt install docker
+sudo usermod -aG docker ${USER}
 sudo apt install docker-compose
 # Пакет для работы с символическими ссылками (бэкап и восстановление 
 # символических ссылок на конфигурационные файлы
