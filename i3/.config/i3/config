@@ -173,24 +173,24 @@ for_window [class="jetbrains-idea" title="win0"] floating enable border none;
 for_window [class="Mathpix Snipping Tool" instance="mathpix-snipping-tool"] floating enable
 
 # (character "]")
-bindcode $mod+Ctrl+35 exec sudo systemctl start docker.service docker.socket
-bindcode $mod+Ctrl+Shift+35 exec sudo systemctl stop docker.service docker.socket
+bindcode $mod+Ctrl+35 exec sudo systemctl start docker.service docker.socket && killall -USR1 i3status
+bindcode $mod+Ctrl+Shift+35 exec sudo systemctl stop docker.service docker.socket && killall -USR1 i3status
 
 # (character "'")
-bindcode $mod+Ctrl+48 exec sudo systemctl start snapd.service snapd.socket
-bindcode $mod+Ctrl+Shift+48 exec sudo systemctl stop snapd.service snapd.socket
+bindcode $mod+Ctrl+48 exec sudo systemctl start snapd.service snapd.socket && killall -USR1 i3status
+bindcode $mod+Ctrl+Shift+48 exec sudo systemctl stop snapd.service snapd.socket && killall -USR1 i3status
 
 # (character "/")
-bindcode $mod+Ctrl+61 exec sudo systemctl start NetworkManager.service
-bindcode $mod+Ctrl+Shift+61 exec sudo systemctl stop NetworkManager.service
+bindcode $mod+Ctrl+61 exec sudo systemctl start NetworkManager.service && killall -USR1 i3status
+bindcode $mod+Ctrl+Shift+61 exec sudo systemctl stop NetworkManager.service && killall -USR1 i3status
 
 # (character "[")
-bindcode $mod+Ctrl+34 exec sudo systemctl start wpa_supplicant.service
-bindcode $mod+Ctrl+Shift+34 exec sudo systemctl stop wpa_supplicant.service
+bindcode $mod+Ctrl+34 exec sudo systemctl start wpa_supplicant.service && killall -USR1 i3status
+bindcode $mod+Ctrl+Shift+34 exec sudo systemctl stop wpa_supplicant.service && killall -USR1 i3status
 
 # (character ";")
-bindcode $mod+Ctrl+47 exec sudo systemctl start winbind.service
-bindcode $mod+Ctrl+Shift+47 exec sudo systemctl stop winbind.service
+bindcode $mod+Ctrl+47 exec sudo systemctl start winbind.service && killall -USR1 i3status
+bindcode $mod+Ctrl+Shift+47 exec sudo systemctl stop winbind.service && killall -USR1 i3status
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
