@@ -144,26 +144,26 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-for_window [class="jetbrains-idea"] move to workspace $ws2; exec dunstify "App notification" "Intellij IDEA is started"
+#for_window [class="jetbrains-idea"] move to workspace $ws2; exec --no-startup-id dunstify "App notification" "Intellij IDEA is started"
 
 # Ranger
 bindsym $mod+Ctrl+r exec ~/.cscripts/ranger/ranger_run; [class = "^URxvt$" instance="^ranger$"] scratchpad show, move position center
-for_window [class = "^URxvt$" instance="^ranger$"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
+for_window [class = "^URxvt$" instance="^ranger$"] floating enable, sticky enable, resize set 1545 873, move scratchpad, border pixel 5
 bindsym $mod+Ctrl+Shift+r exec kill -9 `xprop -name "ranger" | grep "_NET_WM_PID" | cut -d' ' -f3`
 
 # Telegram
 bindsym $mod+Ctrl+t exec telegram-desktop; [class="TelegramDesktop"] scratchpad show, move position center
-for_window [class="TelegramDesktop" title="Telegram.*$"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
+for_window [class="TelegramDesktop" title="Telegram.*$"] floating enable, sticky enable, resize set 1545 873, move scratchpad, border pixel 5
 bindsym $mod+Ctrl+Shift+t exec pkill telegram-deskto
 
 # Skype
 bindsym $mod+Ctrl+s exec skypeforlinux; [class="Skype"] scratchpad show, move position center
-for_window [class="Skype"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
+for_window [class="Skype"] floating enable, sticky enable, resize set 1545 873, move scratchpad, border pixel 5
 bindsym $mod+Ctrl+Shift+s exec pkill skypeforlinux
 
 # Discord
 bindsym $mod+Ctrl+d exec discord; [class="discord"] scratchpad show, move position center
-for_window [class="discord"] floating enable, resize set 1545 873, move scratchpad, border pixel 5
+for_window [class="discord"] floating enable, sticky enable, resize set 1545 873, move scratchpad, border pixel 5
 bindsym $mod+Ctrl+Shift+d exec pkill Discord
 
 # Intellij Idea

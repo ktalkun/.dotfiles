@@ -144,6 +144,8 @@
 		* [Useful links](#useful-links)
 	* [Network Managment](#network-managment)
 		* [Eduroam](#eduroam)
+			* [Eduroam WIFI](#eduroam-wifi)
+			* [Eduroam mount fpmi-stud](#eduroam-mount-fpmi-stud)
 	* [TeX](#tex)
 		* [Pgfplots](#pgfplots)
 * [Solving problems](#solving-problems)
@@ -3907,7 +3909,9 @@ NETWORKING CONTROL COMMANDS
 Таким образом, команда `nmcli networking` покажет включено ли управление сетевыми интерфесам с помощью _NetworkManager_, команда `nmcli networking connectivity` покажет есть ли соединение с интернетом.
 
 ### Eduroam
-Для подключения к сети eduroam создадим файл `/etc/wpa_supplicant/wpa_supplicant.conf` со следующим содержимым:
+
+#### Eduroam WIFI
+Для подключения к сети eduroam создадим файл `/home/kirill/.wificfg/wpa_supplicant.conf` со следующим содержимым:
 
 ```sh
 ctrl_interface=/var/run/wpa_supplicant
@@ -3916,8 +3920,8 @@ network={
 	ssid="eduroam"
 	key_mgmt=WPA-EAP
 	eap=PEAP
-	identity="fpm.tolkun@bsu.by"
-	password="1723249"
+	identity="fpm.student@bsu.by"
+	password="1111111"
 	phase1="peaplabel=0"
 	phase2="auth=MSCHAPV2"
 }
@@ -3927,9 +3931,31 @@ network={
 
 ```sh
 # Подключение к eduroam
-sudo wpa_supplicant -i wlp3s0 -D wext -c /etc/wpa_supplicant/wpa_supplicant.conf &
+sudo wpa_supplicant -i wlp3s0 -D wext -c /home/kirill/.wificfg/wpa_supplicant.conf &
 # Получение ip по dhcp
-sudo dhclient
+sudo dhclient -r && sudo dhclient
+```
+
+#### Eduroam mount fpmi-stud
+Чтобы получиться доступ к расшаренной по сети директории, проделаем следующие манипуляции:
+1. Установим пакет `cifs-utils`:
+
+```sh
+sudo apt isntall cifs-utils
+```
+
+2. Создадим файл `~/.wificfg/fpmi-credentials.conf` с пользовательскими данными:
+
+```sh
+username=fpm.student
+password=1111111
+```
+
+3. Подключим расшаренную директорию:
+
+```sh
+sudo mkdir -p /media/fpmi
+sudo mount -t cifs -o credentials=/home/kirill/.wificfg/fpmi-credentials //10.150.1.3/Subfaculty/ /media/fpmi
 ```
 
 ## TeX
