@@ -13,3 +13,7 @@ export XDG_DATA_DIRS=/usr/local/share:/usr/share:$XDG_DATA_DIRS
 # Snap (for i3)
 export PATH=/snap/bin:$PATH					# add bin files of snap's apps to have access from terminal and default dmenu (rofi)
 export XDG_DATA_DIRS=/var/lib/snapd/desktop:$XDG_DATA_DIRS	# add desktop files of snap's apps to have access form dmenu (rofi) in desktop mode
+
+if test -f "/usr/local/bin/rofipass"; then
+	export SUDO_ASKPASS=/usr/local/bin/rofipass
+fi
