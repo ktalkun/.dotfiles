@@ -85,13 +85,13 @@ bindsym Mod1+XF86AudioMute exec amixer set Capture toggle && killall -USR1 i3sta
 
 # PrintScreen
 # Fullscreen screenshot
-bindsym Print exec "scrot /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-full-$wx$h.png'"
+bindsym Print exec "scrot /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-full-$wx$h.png' -e 'convert $f -resize 80 ~/.thumbs/$n && dunstify -i ~/.thumbs/$n Screenshot Fullscreen'"
 # Fullscreen screenshot in clipboard
-bindsym Ctrl+Print exec "scrot /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-full-$wx$h.png' -e 'pngquant $f --ext=-compressed.png && xclip -i -sel c -t image/png `echo $f | sed s/.png/-compressed.png/`'"
+bindsym Ctrl+Print exec "scrot /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-full-$wx$h.png' -e 'pngquant $f --ext=-compressed.png && xclip -i -sel c -t image/png `echo $f | sed s/.png/-compressed.png/` && convert `echo $f | sed s/.png/-compressed.png/` -resize 80 ~/.thumbs/$n && dunstify -i ~/.thumbs/$n Screenshots Fullscreen_Clipboard'"
 # Screenshot of area
-bindsym Mod1+Sys_Req exec "scrot -a $(slop -f '%x,%y,%w,%h') /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-area-$wx$h.png'"
+bindsym Mod1+Sys_Req exec "scrot -a $(slop -f '%x,%y,%w,%h') /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-area-$wx$h.png' -e 'convert $f -resize 80 ~/.thumbs/$n && dunstify -i ~/.thumbs/$n Screenshot Area'"
 # Screenshot of area in clipboard
-bindsym Ctrl+Mod1+Sys_Req exec "scrot -a $(slop -f '%x,%y,%w,%h') /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-area-$wx$h.png' -e 'pngquant $f --ext=-compressed.png && xclip -i -sel c -t image/png `echo $f | sed s/.png/-compressed.png/`'"
+bindsym Ctrl+Mod1+Sys_Req exec "scrot -a $(slop -f '%x,%y,%w,%h') /home/$USER/Pictures/Screenshots/'%Y-%m-%d-%T-area-$wx$h.png' -e 'pngquant $f --ext=-compressed.png && xclip -i -sel c -t image/png `echo $f | sed s/.png/-compressed.png/` && convert `echo $f | sed s/.png/-compressed.png/` -resize 80 ~/.thumbs/$n && dunstify -i ~/.thumbs/$n Screenshots Area_Clipboard'"
 
 # Power managment
 bindsym $mod+Mod1+s exec systemctl suspend

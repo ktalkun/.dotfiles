@@ -112,7 +112,8 @@ show_indicators = false
 #	left - иконка слева
 #	right - иконка справа
 #	off - иконка не отображается
-icon_position = off
+icon_position = left
+max_icon_size = 80
 
 # Если true, то уведомления, которые были извлечены из истории
 # не будут автоматически скрываться
