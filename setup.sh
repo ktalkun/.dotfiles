@@ -15,6 +15,7 @@ entries=(
     ["i3status"]="${HOME}"
     ["office"]="${HOME}"
     ["ranger"]="${HOME}"
+    ["rofi"]="${HOME}"
     ["tmux"]="${HOME}"
     ["urxvt"]="${HOME}"
     ["vim"]="${HOME}"

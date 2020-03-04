@@ -117,15 +117,3 @@ URxvt.keysym.C-S-Down:		perl:font-size:decglobal
 URxvt.keysym.C-equal:		perl:font-size:reset
 URxvt.keysym.C-slash:		perl:font-size:show
 !URxvt.font-size.step: 0.1
-
-
-! ------------------------------------------------------------------------------
-! Rofi configs
-! ------------------------------------------------------------------------------
-
-rofi.color-enabled: true
-rofi.color-window: #2e3440, #2e3440, #2e3440
-rofi.color-normal: #2e3440, #d8dee9, #2e3440, #2e3440, #bf616a
-rofi.color-active: #2e3440, #b48ead, #2e3440, #2e3440, #93e5cc
-rofi.color-urgent: #2e3440, #ebcb8b, #2e3440, #2e3440, #ebcb8b
-rofi.modi: run,drun,window
