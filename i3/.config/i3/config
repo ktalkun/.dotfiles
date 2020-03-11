@@ -154,7 +154,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Ranger
 bindsym $mod+Ctrl+r exec ~/.cscripts/ranger/ranger_run; [class = "^URxvt$" instance="^ranger$"] scratchpad show, move position center
 for_window [class = "^URxvt$" instance="^ranger$"] floating enable, sticky enable, resize set 1545 873, move scratchpad, border pixel 5
-bindsym $mod+Ctrl+Shift+r exec kill -9 `xprop -name "ranger" | grep "_NET_WM_PID" | cut -d' ' -f3`
+bindsym $mod+Ctrl+Shift+r exec kill -9 $(xprop -id `xwininfo -root -tree -all | grep "(.ranger." | cut -d' ' -f9` _NET_WM_PID|cut -d'=' -f2|tr -d ' ')
 
 # Telegram
 bindsym $mod+Ctrl+t exec telegram-desktop; [class="TelegramDesktop"] scratchpad show, move position center
@@ -262,4 +262,4 @@ client.urgent               	#2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
 client.placeholder          	#2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
 client.background           	#2f343f
 
-exec --no-startup-id hsetroot -cover ~/Pictures/Wallpapers/Llama.jpg
+exec --no-startup-id hsetroot -cover /home/kirill/Pictures/Wallpapers/Nature.png
