@@ -173,14 +173,8 @@ bindsym $mod+Ctrl+d exec discord; [class="discord"] scratchpad show, move positi
 for_window [class="discord"] floating enable, sticky enable, resize set 1545 873, move scratchpad, border pixel 5
 bindsym $mod+Ctrl+Shift+d exec pkill Discord
 
-# Intellij Idea
-for_window [class="jetbrains-idea" title="win0"] floating enable border none
-
-# Clion
-for_window [class="jetbrains-clion" title="win0"] floating enable border none
-
-# PyCharm
-for_window [class="jetbrains-pycharm" title="win0"] floating enable border none
+# Jetbrains IDE
+for_window [class="jetbrains-*" title="win0"] floating enable border none
 
 # Mathpix Snipping Tool
 for_window [class="Mathpix Snipping Tool" instance="mathpix-snipping-tool"] floating enable
