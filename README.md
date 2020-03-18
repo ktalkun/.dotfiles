@@ -98,6 +98,8 @@
 	* [Discord](#discord)
 	* [Mathpix snipping tool](#mathpix-snipping-tool)
 	* [Intellij IDEA](#intellij-idea)
+	* [Clion](#clion)
+	* [PyCharm](#pycharm)
 	* [Postman](#postman)
 	* [Krita](#krita)
 	* [Vim](#vim)
@@ -2896,6 +2898,44 @@ snap run intellij-idea-ultimate
 
 # Community версия
 snap run intellij-idea-ultimate
+```
+
+## Clion
+Установим _Clion_ при помощи пакетной системы _Snap_. Для этого [snap](#snap) должен быть уже установлен.
+
+Если _Snap_ уже установлен, чтобы установить _Clion_, достаточно выполнить следующую команду:
+
+```sh
+sudo snap install clion --classic
+```
+
+Теперь, чтобы запустить _Clion_ достаточно выполнить следующую команду:
+
+```sh
+snap run clion
+```
+
+## PyCharm
+Установим _PyCharm_ при помощи пакетной системы _Snap_. Для этого [snap](#snap) должен быть уже установлен.
+
+Если _Snap_ уже установлен, чтобы установить _PyCharm_, достаточно выполнить следующую команду:
+
+```sh
+# Pro версия
+sudo snap install pycharm-professional --classic
+
+# Community версия
+sudo snap install pycharm-community --classic
+```
+
+Теперь, чтобы запустить _PyCharm_ достаточно выполнить следующую команду:
+
+```sh
+# Ultimate версия
+snap run pycharm-professional
+
+# Community версия
+snap run 
 ```
 
 ## Postman
