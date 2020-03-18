@@ -179,6 +179,9 @@ for_window [class="jetbrains-idea" title="win0"] floating enable border none
 # Clion
 for_window [class="jetbrains-clion" title="win0"] floating enable border none
 
+# PyCharm
+for_window [class="jetbrains-pycharm" title="win0"] floating enable border none
+
 # Mathpix Snipping Tool
 for_window [class="Mathpix Snipping Tool" instance="mathpix-snipping-tool"] floating enable
 
